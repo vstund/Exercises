@@ -18,7 +18,7 @@ namespace Exercises.Level1
         /// </summary>
         public bool FirstLast6(int[] nums)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         /// <summary>
