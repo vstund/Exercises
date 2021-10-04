@@ -274,7 +274,7 @@ namespace Exercises.Level1.Tests
         [Theory]
         [InlineData(new int[] { 4, 2, 3, 1 }, new int[] { 1, 2, 3, 4 })]
         [InlineData(new int[] { 3, 2, 1 }, new int[] { 1, 2, 3 })]
-        [InlineData(new int[] { 5, 6, 7, 9, 8 }, new int[] { 8, 6, 7, 9, 5 })]
+        [InlineData(new int[] { 5, 9, 7, 6, 8 }, new int[] { 8, 9, 7, 6, 5 })]
         [InlineData(new int[] { 9, 1, 4, 1, 5, 3 }, new int[] { 3, 1, 4, 1, 5, 9 })]
         [InlineData(new int[] { 2, 1 }, new int[] { 1, 2 })]
         [InlineData(new int[] { 1 }, new int[] { 1 })]

@@ -164,12 +164,12 @@ namespace Exercises.Level1
         /// </summary>
         public bool Love6(int a, int b)
         {
-            //  if (a == 6 || b == 6 || (a - b) == 6 || (b - a) == 6 || (a + b) == 6)
+            //  if (a == 6 || b == 6 || Math.Abs((a - b)) == 6 || (a + b) == 6)
             //  {
             //      return true;
             //  }
             //  return false;
-            return a == 6 || b == 6 || (a - b) == 6 || (b - a) == 6 || (a + b) == 6;//? true : false;
+            return a == 6 || b == 6 || Math.Abs((a - b)) == 6 || (a + b) == 6;//? true : false;
         }
 
         /// <summary>
