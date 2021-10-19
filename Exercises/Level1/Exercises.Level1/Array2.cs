@@ -671,7 +671,12 @@ namespace Exercises.Level1
         /// </summary>
         public int[] FizzArray3(int start, int end)
         {
-            throw new NotImplementedException();
+            int[] newArray = new int[end - start];
+            for (int i = start; i < end; i++)
+            {
+                newArray[i - start] = i;
+            }
+            return newArray;
         }
 
         /// <summary>
@@ -683,8 +688,18 @@ namespace Exercises.Level1
         /// shiftLeft([1]) → [1]
         /// </summary>
         public int[] ShiftLeft(int[] nums)
+
         {
-            throw new NotImplementedException();
+            int[] newArray = new int[nums.Length];
+            if (nums.Length > 0)
+            {
+                for (int i = 0; i < nums.Length - 1; i++)
+                {
+                    newArray[i] = nums[i + 1];
+                }
+                newArray[nums.Length - 1] = nums[0];
+            }
+            return newArray;
         }
 
         /// <summary>
@@ -698,7 +713,24 @@ namespace Exercises.Level1
         /// </summary>
         public int[] TenRun(int[] nums)
         {
-            throw new NotImplementedException();
+            bool tenActive = false;
+            int[] newArray = new int[nums.Length];
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] % 10 == 0)
+                {
+                    newArray[i] = nums[i];
+                    tenActive = true;
+                }
+                else
+                    if (tenActive)
+                {
+                    newArray[i] = newArray[i - 1];
+                }
+                else newArray[i] = nums[i];
+            }
+            return newArray;
         }
 
         /// <summary>
@@ -712,8 +744,21 @@ namespace Exercises.Level1
         /// </summary>
         public int[] Pre4(int[] nums)
         {
-            throw new NotImplementedException();
+            int lng = 0;
+            for (int i = 0; i < nums.Length && nums[i] != 4; i++)
+            {
+                lng = i + 1;
+            }
+            int[] newArray = new int[lng];
+
+            for (int i = 0; i < nums.Length && nums[i] != 4; i++)
+            {
+                newArray[i] = nums[i];
+            }
+            return newArray;
         }
+
+        // Kā šo var izdarīt vienā cilpā?
 
         /// <summary>
         /// Given a non-empty array of ints, return a new array containing the elements from the
@@ -726,7 +771,18 @@ namespace Exercises.Level1
         /// </summary>
         public int[] Post4(int[] nums)
         {
-            throw new NotImplementedException();
+            int lng = 0;
+            for (int i = nums.Length - 1; i > 0 && nums[i] != 4; i--)
+            {
+                lng++;
+            }
+            int[] newArray = new int[lng];
+
+            for (int i = 0; i < newArray.Length; i++)
+            {
+                newArray[i] = nums[nums.Length - lng + i];
+            }
+            return newArray;
         }
 
         /// <summary>
@@ -738,9 +794,22 @@ namespace Exercises.Level1
         /// notAlone([1, 2, 3, 2, 5, 2], 2) → [1, 3, 3, 5, 5, 2]
         /// notAlone([3, 4], 3) → [3, 4]
         /// </summary>
+        
+        //Šo vēl neuzspēju pabeigt!
         public int[] NotAlone(int[] nums, int val)
         {
-            throw new NotImplementedException();
+            int[] newArray = new int[nums.Length];
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if(i%val == 0)
+                {
+                    newArray[i] = Math.Max(nums[i-1], nums[i+1]);
+                }
+                newArray[i] = nums[i];
+            }
+
+            return newArray;
         }
 
         /// <summary>
